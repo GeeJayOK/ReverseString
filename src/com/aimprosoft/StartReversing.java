@@ -1,3 +1,5 @@
+package com.aimprosoft;
+
 import java.util.Scanner;
 
 public class StartReversing {

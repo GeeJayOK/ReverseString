@@ -1,3 +1,5 @@
+package com.aimprosoft;
+
 public class ReverseString {
 
     public static void reverseWords(String enteredString) {
