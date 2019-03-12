@@ -1,22 +1,22 @@
 public class ReverseString {
 
-    public static String reverseWords(String enteredString) {
+    public static void reverseWords(String enteredString) {
 
-        String[] arrayOfWords = enteredString.split(" ");
+        String[] arrayWords = enteredString.split(" ");
         String reverseString = "";
         String reverseWord = "";
 
-        for (int numberOfWordInString = 0; numberOfWordInString < arrayOfWords.length; numberOfWordInString++) {
-            String word = arrayOfWords[numberOfWordInString];
+        for (int counter = 0; counter < arrayWords.length; counter++) {
+            String word = arrayWords[counter];
 
-            for (int lengthOfWord = word.length() - 1; lengthOfWord >= 0; lengthOfWord--) {
-                char[] charArrayOfWord = word.toCharArray();
-                reverseChars(charArrayOfWord);
-                reverseWord = new String(charArrayOfWord);
+            for (int lengthWord = word.length() - 1; lengthWord >= 0; lengthWord--) {
+                char[] chars = word.toCharArray();
+                reverseChars(chars);
+                reverseWord = new String(chars);
             }
             reverseString = reverseString + reverseWord + " ";
         }
-        return reverseString;
+        StartReversing.printResult(reverseString);
     }
 
     public static void reverseChars(char chars[]) {
