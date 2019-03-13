@@ -4,7 +4,24 @@ public class ReverseString {
 
     public static void reverseWords(String enteredString) {
 
-        String[] arrayWords = enteredString.split(" ");
+        String[] split = enteredString.split("[\\s,!.]");
+        StringBuilder out = new StringBuilder(enteredString.length());
+        StringBuilder temp = new StringBuilder(enteredString.length());
+        for (String s : split) {
+            // reset the length and reuse the tmp StringBuilder
+            temp.setLength(0);
+            // append the part the the temporary StringBuilder
+            temp.append(s);
+            // append the reversed part to the output StringBuilder
+            out.append(temp.reverse());
+            // if the length of the input is longer then the output
+            // we need to add the separator char from the input
+            if (enteredString.length() > out.length()) {
+                out.append(enteredString.charAt(out.length()));
+            }
+        }
+
+        /*String[] arrayWords = enteredString.split(" ");
         String reverseString = "";
         String reverseWord = "";
 
@@ -18,22 +35,22 @@ public class ReverseString {
             }
             reverseString = reverseString + reverseWord + " ";
         }
-        StartReversing.printResult(reverseString);
+        Main.printResult(reverseString);*/
     }
 
     public static void reverseChars(char chars[]) {
-        int rightPointer = chars.length - 1, leftPointer = 0;
-        while (leftPointer < rightPointer) {
-            if (!Character.isAlphabetic(chars[leftPointer]))
-                leftPointer++;
-            else if (!Character.isAlphabetic(chars[rightPointer]))
-                rightPointer--;
+        int rightCounter = chars.length - 1, leftCounter = 0;
+        while (leftCounter < rightCounter) {
+            if (!Character.isAlphabetic(chars[leftCounter]))
+                leftCounter++;
+            else if (!Character.isAlphabetic(chars[rightCounter]))
+                rightCounter--;
             else {
-                char tmp = chars[leftPointer];
-                chars[leftPointer] = chars[rightPointer];
-                chars[rightPointer] = tmp;
-                leftPointer++;
-                rightPointer--;
+                char temp = chars[leftCounter];
+                chars[leftCounter] = chars[rightCounter];
+                chars[rightCounter] = temp;
+                leftCounter++;
+                rightCounter--;
             }
         }
     }

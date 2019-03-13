@@ -2,7 +2,7 @@ package com.aimprosoft;
 
 import java.util.Scanner;
 
-public class StartReversing {
+public class Main {
 
     public static void main(String[] args) {
         System.out.println("Enter you string: ");
