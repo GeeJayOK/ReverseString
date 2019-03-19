@@ -2,8 +2,10 @@ package com.aimprosoft;
 
 public class ReverseString {
 
+    private static final String SEPARATOR = " ";
+
     public String splitStringToWords(String enteredString) {
-        final String SEPARATOR = " ";
+
         String reversedWord;
         String reversedString;
 
@@ -21,21 +23,22 @@ public class ReverseString {
         return reversedString;
     }
 
-    private static void reverseChars(char chars[]) {
-        int rightCounter = chars.length - 1, leftCounter = 0;
+    private static void reverseChars(char word[]) {
+        int rightCounter = word.length - 1, leftCounter = 0;
         while (leftCounter < rightCounter) {
-            if (!Character.isAlphabetic(chars[leftCounter]))
+            if (!Character.isAlphabetic(word[leftCounter]))
                 leftCounter++;
-            else if (!Character.isAlphabetic(chars[rightCounter]))
+            else if (!Character.isAlphabetic(word[rightCounter]))
                 rightCounter--;
             else {
-                char temp = chars[leftCounter];
-                chars[leftCounter] = chars[rightCounter];
-                chars[rightCounter] = temp;
+                char temp = word[leftCounter];
+                word[leftCounter] = word[rightCounter];
+                word[rightCounter] = temp;
                 leftCounter++;
                 rightCounter--;
             }
         }
     }
 }
+
 
