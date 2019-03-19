@@ -1,4 +1,4 @@
-package com.aimprosoft;
+package com.aimprosoft.yaroslavGetalo;
 
 import java.util.Scanner;
 

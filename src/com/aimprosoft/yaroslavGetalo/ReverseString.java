@@ -1,4 +1,4 @@
-package com.aimprosoft;
+package com.aimprosoft.yaroslavGetalo;
 
 public class ReverseString {
 
