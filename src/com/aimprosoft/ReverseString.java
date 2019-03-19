@@ -14,9 +14,9 @@ public class ReverseString {
         StringBuilder temp = new StringBuilder(enteredString.length());
         for (String s : split) {
             temp.append(s);
-            char[] chars = s.toCharArray();
-            reverseChars(chars);
-            reversedWord = new String(chars);
+            char[] word = s.toCharArray();
+            reverseChars(word);
+            reversedWord = new String(word);
             out.append(reversedWord + SEPARATOR);
         }
         reversedString = out.toString();
@@ -31,13 +31,17 @@ public class ReverseString {
             else if (!Character.isAlphabetic(word[rightCounter]))
                 rightCounter--;
             else {
-                char temp = word[leftCounter];
-                word[leftCounter] = word[rightCounter];
-                word[rightCounter] = temp;
+                swapWord(word, rightCounter, leftCounter);
                 leftCounter++;
                 rightCounter--;
             }
         }
+    }
+
+    private static void swapWord(char[] word, int rightCounter, int leftCounter) {
+        char temp = word[leftCounter];
+        word[leftCounter] = word[rightCounter];
+        word[rightCounter] = temp;
     }
 }
 

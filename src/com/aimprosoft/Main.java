@@ -13,5 +13,8 @@ public class Main {
         System.out.println(enteredString);
         System.out.println("Output string:");
         System.out.println(reverseString.splitStringToWords(enteredString));
+
+
+
     }
 }
