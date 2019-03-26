@@ -1,6 +1,6 @@
 package com.aimprosoft.yaroslavGetalo;
 
-public class ReverseString {
+public class Anagram {
 
     private static final String SEPARATOR = " ";
 

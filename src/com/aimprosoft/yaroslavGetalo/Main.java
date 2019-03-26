@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        ReverseString reverseString = new ReverseString();
+        Anagram reverseString = new Anagram();
         System.out.println("Enter you string: ");
         Scanner scanner = new Scanner(System.in);
         String enteredString = scanner.nextLine();
